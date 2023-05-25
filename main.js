@@ -76,7 +76,7 @@ function firstPrime() {
             }
         }
 
-        if (isPrime && arr[i] > 1) {
+        if (isPrime && arr[i] > 1 && arr[i] % 1 === 0) {
             return arr[i];
         }
     }
@@ -131,20 +131,25 @@ addNumBtn.addEventListener('click', function (e) {
 resultBtn.addEventListener('click', function (e) {
     e.preventDefault();
 
-    // Tìm option
-    let seclectedOption = checkedOption();
+    if (arr.length > 0) {
+        // Tìm option
+        let seclectedOption = checkedOption();
 
-    // Tính toán
-    let result;
-    result = seclectedOption === 'sumInt' ? sumInt() :
-        seclectedOption === 'countPositive' ? countPositive() :
-            seclectedOption === 'numMin' ? findMin() :
-                seclectedOption === 'intMin' ? findIntMin() :
-                    seclectedOption === 'evenNumLast' ? findEvenNumLast() :
-                        seclectedOption === 'sortAscending' ? sortAscending() :
-                            seclectedOption === 'primeNum' ? firstPrime() :
-                                seclectedOption === 'countInteger' ? countInteger() :
-                                    seclectedOption === 'posNev' ? PosNevCompare() : changePos();
-    // Show ra kết quả
-    showResultFunc(result);
+        // Tính toán
+        let result;
+        result = seclectedOption === 'sumInt' ? sumInt() :
+            seclectedOption === 'countPositive' ? countPositive() :
+                seclectedOption === 'numMin' ? findMin() :
+                    seclectedOption === 'intMin' ? findIntMin() :
+                        seclectedOption === 'evenNumLast' ? findEvenNumLast() :
+                            seclectedOption === 'sortAscending' ? sortAscending() :
+                                seclectedOption === 'primeNum' ? firstPrime() :
+                                    seclectedOption === 'countInteger' ? countInteger() :
+                                        seclectedOption === 'posNev' ? PosNevCompare() : changePos();
+        // Show ra kết quả
+        showResultFunc(result);
+    }
+    else {
+        alert('Array no value babe!');
+    }
 })
