@@ -67,19 +67,25 @@ function sortAscending() {
 }
 
 function firstPrime() {
+    //  duyệt qua từng phần tử arr[i]
     for (let i = 0; i < arr.length; i++) {
+        // Flagger
         let isPrime = true;
+        // kiểm tra từng số từ 2 đến arr[i] - 1
         for (let j = 2; j < arr[i]; j++) {
+            // nếu arr[i] chia hết cho j thì nó không phải số nguyên tố. Thoát vòng lặp kiểm tra tiếp arr[i + 1];
             if (arr[i] % j === 0) {
                 isPrime = false;
                 break;
             }
         }
 
+        // Nếu flagger = true và lớn hơn 1 thì nó chính là số nguyên tố.
         if (isPrime && arr[i] > 1 && arr[i] % 1 === 0) {
             return arr[i];
         }
     }
+    // Không thấy thì trả về -1 như yêu cầu đề bài
     return -1;
 }
 
@@ -90,9 +96,12 @@ function countInteger() {
 }
 
 function PosNevCompare() {
+    // tính số lượng các số dương trong mảng
     let pos = arr.reduce(function (acc, num) {
         return num > 0 ? acc + 1 : acc;
     }, 0);
+
+    // tính số lượng các số âm trong mảng 
     let nev = arr.reduce(function (acc, num) {
         return num < 0 ? acc + 1 : acc;
     }, 0);
@@ -100,20 +109,22 @@ function PosNevCompare() {
 }
 
 function changePos() {
+    // Lấy giá trị của hai vị trí từ các phần tử HTML có ID changePos1 và changePos2.
     const indexFirst = document.querySelector('#changePos1').value;
     const indexSecond = document.querySelector('#changePos2').value;
 
+    // Kiểm tra xem vị trí nhập vào có hợp lệ hay không
     if (indexFirst >= arr.length || indexSecond >= arr.length) {
         alert('Nhập sai thông tin vị trí bấy bì ơi!');
         return arr;
     }
     else {
+        // Thực hiện việc hoán đổi giá trị giữa hai vị trí đó trong mảng arr.
         let temp = arr[indexFirst];
         arr[indexFirst] = arr[indexSecond];
         arr[indexSecond] = temp;
         return arr;
     }
-
 }
 
 addNumBtn.addEventListener('click', function (e) {
@@ -129,8 +140,34 @@ addNumBtn.addEventListener('click', function (e) {
 })
 
 resultBtn.addEventListener('click', function (e) {
+    /**
+     * Input:
+     * Lấy dữ liệu từ người dùng.
+     * Mảng arr chứa dữ liệu được nhập
+     */
+    /**
+     * Process:
+     * Hàm checkInvalid: Kiểm tra tính hợp lệ của giá trị số nhập vào.
+     * Hàm addArray: Thêm giá trị số vào mảng arr.
+     * Hàm checkedOption: Lựa chọn tùy chọn từ danh sách các tùy chọn.
+     * Hàm sumInt: Tính tổng các số nguyên trong mảng.
+     * Hàm countPositive: Đếm số lượng số dương trong mảng.
+     * Hàm findMin: Tìm số nhỏ nhất trong mảng.
+     * Hàm findIntMin: Tìm số nguyên dương nhỏ nhất trong mảng.
+     * Hàm findEvenNumLast: Tìm số chẵn cuối cùng trong mảng.
+     * Hàm sortAscending: Sắp xếp mảng theo thứ tự tăng dần.
+     * Hàm firstPrime: Tìm số nguyên tố đầu tiên trong mảng.
+     * Hàm countInteger: Đếm số lượng số nguyên trong mảng.
+     * Hàm PosNevCompare: So sánh số dương và số âm trong mảng.
+     * Hàm changePos: Đổi vị trí hai số trong mảng.
+     * Hàm/
+    /**
+     * Output:
+     * Hàm showArray: Hiển thị mảng arr.
+     * Hàm showResultFunc: Hiển thị kết quả tính toán.
+     * Hàm alert: Hiển thị thông báo cho người dùng.
+     */
     e.preventDefault();
-
     if (arr.length > 0) {
         // Tìm option
         let seclectedOption = checkedOption();
