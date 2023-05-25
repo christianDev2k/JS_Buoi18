@@ -1,3 +1,30 @@
+/**
+* Input:
+* Lấy dữ liệu từ người dùng.
+* Mảng arr chứa dữ liệu được nhập
+*/
+/**
+* Process:
+* Hàm checkInvalid: Kiểm tra tính hợp lệ của giá trị số nhập vào.
+* Hàm addArray: Thêm giá trị số vào mảng arr.
+* Hàm checkedOption: Lựa chọn tùy chọn từ danh sách các tùy chọn.
+* Hàm sumInt: Tính tổng các số nguyên trong mảng.
+* Hàm countPositive: Đếm số lượng số dương trong mảng.
+* Hàm findMin: Tìm số nhỏ nhất trong mảng.
+* Hàm findIntMin: Tìm số nguyên dương nhỏ nhất trong mảng.
+* Hàm findEvenNumLast: Tìm số chẵn cuối cùng trong mảng.
+* Hàm sortAscending: Sắp xếp mảng theo thứ tự tăng dần.
+* Hàm firstPrime: Tìm số nguyên tố đầu tiên trong mảng.
+* Hàm countInteger: Đếm số lượng số nguyên trong mảng.
+* Hàm PosNevCompare: So sánh số dương và số âm trong mảng.
+* Hàm changePos: Đổi vị trí hai số trong mảng.
+* Hàm/
+/**
+* Output:
+* Hàm showArray: Hiển thị mảng arr.
+* Hàm showResultFunc: Hiển thị kết quả tính toán.
+* Hàm alert: Hiển thị thông báo cho người dùng.
+*/
 const numInput = document.querySelector('#inputNum');
 const addNumBtn = document.querySelector('#addNumBtn');
 const showArr = document.querySelector('#showArr');
@@ -140,33 +167,6 @@ addNumBtn.addEventListener('click', function (e) {
 })
 
 resultBtn.addEventListener('click', function (e) {
-    /**
-     * Input:
-     * Lấy dữ liệu từ người dùng.
-     * Mảng arr chứa dữ liệu được nhập
-     */
-    /**
-     * Process:
-     * Hàm checkInvalid: Kiểm tra tính hợp lệ của giá trị số nhập vào.
-     * Hàm addArray: Thêm giá trị số vào mảng arr.
-     * Hàm checkedOption: Lựa chọn tùy chọn từ danh sách các tùy chọn.
-     * Hàm sumInt: Tính tổng các số nguyên trong mảng.
-     * Hàm countPositive: Đếm số lượng số dương trong mảng.
-     * Hàm findMin: Tìm số nhỏ nhất trong mảng.
-     * Hàm findIntMin: Tìm số nguyên dương nhỏ nhất trong mảng.
-     * Hàm findEvenNumLast: Tìm số chẵn cuối cùng trong mảng.
-     * Hàm sortAscending: Sắp xếp mảng theo thứ tự tăng dần.
-     * Hàm firstPrime: Tìm số nguyên tố đầu tiên trong mảng.
-     * Hàm countInteger: Đếm số lượng số nguyên trong mảng.
-     * Hàm PosNevCompare: So sánh số dương và số âm trong mảng.
-     * Hàm changePos: Đổi vị trí hai số trong mảng.
-     * Hàm/
-    /**
-     * Output:
-     * Hàm showArray: Hiển thị mảng arr.
-     * Hàm showResultFunc: Hiển thị kết quả tính toán.
-     * Hàm alert: Hiển thị thông báo cho người dùng.
-     */
     e.preventDefault();
     if (arr.length > 0) {
         // Tìm option
